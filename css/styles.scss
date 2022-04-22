@@ -21,10 +21,19 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: "Amalfi Coast";
+    src: url("../fonts/Amalfi-Coast.woff") format("woff2"), url("../fonts/Amalfi-Coast.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 html,
 body {
-  position: relative;
-  height: 100%;
+    position: relative;
+    height: 100%;
 }
 
 body {
@@ -59,6 +68,8 @@ a {
     --color-gray: #8e8e8e;
     --color-dark-gray: #5e5e5e;
     --color-white: #fff;
+    --color-gray-light: #f3f0f0;
+    --color-black:#000;
 }
 
 @mixin title {
@@ -151,11 +162,13 @@ header {
                     font-size: 1.4rem;
                     padding: 0.6rem 0.5rem;
                     background: rgb(47, 65, 144);
-                    background: linear-gradient(90deg,
-                            rgba(47, 65, 144, 1) 0%,
-                            rgba(88, 100, 155, 1) 35%,
-                            rgba(120, 127, 163, 1) 78%,
-                            rgba(165, 167, 174, 1) 100%);
+                    background: linear-gradient(
+                        90deg,
+                        rgba(47, 65, 144, 1) 0%,
+                        rgba(88, 100, 155, 1) 35%,
+                        rgba(120, 127, 163, 1) 78%,
+                        rgba(165, 167, 174, 1) 100%
+                    );
                     background-size: 300%;
                     color: var(--color-white);
                     animation-duration: 4s;
@@ -194,18 +207,16 @@ header {
 }
 
 .banner {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    /*     background: var(--color-white);
     font-size: 14px;
-    color: white;
+    color: var(--color-white);
     margin: 0;
     padding: 0;
-    position: relative;
+    position: relative; */
     height: 100%;
-    width: 100%;
-    overflow: hidden;
-
-
+    /*     width: 100%;
+    overflow: hidden; */
+    height: calc(100% - 130px);
     .swiper-container {
         width: 100%;
         height: 100%;
@@ -231,6 +242,59 @@ header {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+    }
+}
+
+.speed-appointment {
+    background-color: var(--color-gray-light);
+    height: 36vh;
+    .text-area {
+        padding-right: 0;
+        .content {
+            position: relative;
+            height: 35vh;
+            background-color: white;
+            background-color: var(--color-blue);
+            margin-top: -10rem;
+            z-index: 999;
+            padding-top: 2.5rem;
+            h3 {
+                font-family: "Amalfi Coast";
+                color: var(--color-white);
+                font-size: 4.5rem;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid var(--color-black);
+            }
+            .text {
+                max-width: 30rem;
+                p {
+                    color: var(--color-white);
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .quick-appointment {
+        background-color: var(--color-white);
+        height: 50vh;
+        position: relative;
+        z-index: 999;
+        margin-top: -10rem;
+        .row {
+            padding: 2rem;
+            img {
+                object-fit: cover;
+            }
+        }
+        .button-area {
+            width: 100%;
+            padding: 0rem 1rem;
+            button {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -301,7 +365,6 @@ header {
             }
         }
     }
-
 }
 
 @keyframes gradients {

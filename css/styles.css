@@ -5,6 +5,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Anybody";
   src: url("../fonts/Anybody-Medium.woff2") format("woff2"), url("../fonts/Anybody-Medium.woff") format("woff");
@@ -12,6 +13,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Anybody";
   src: url("../fonts/Anybody-SemiBold.woff2") format("woff2"), url("../fonts/Anybody-SemiBold.woff") format("woff");
@@ -19,6 +21,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Amalfi Coast";
+  src: url("../fonts/Amalfi-Coast.woff") format("woff2"), url("../fonts/Amalfi-Coast.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   position: relative;
@@ -31,16 +42,19 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul {
   padding-left: 0;
   margin-bottom: 0;
 }
+
 ul li {
   list-style-type: none;
 }
+
 ul li a {
   text-decoration: none;
 }
@@ -55,68 +69,85 @@ a {
   --color-gray: #8e8e8e;
   --color-dark-gray: #5e5e5e;
   --color-white: #fff;
+  --color-gray-light: #f3f0f0;
+  --color-black:#000;
 }
 
 header nav .top-line {
   border-bottom: 1px solid var(--color-blue);
   padding: 1.5rem 0rem;
 }
+
 header nav .top-line .contact-us,
 header nav .top-line .social-media {
   margin-bottom: 0;
 }
+
 header nav .top-line .contact-us li,
 header nav .top-line .social-media li {
   margin-right: 1rem;
 }
+
 header nav .top-line .contact-us li a,
 header nav .top-line .social-media li a {
   color: var(--color-gray);
   font-weight: 500;
 }
+
 header nav .top-line .contact-us li a img,
 header nav .top-line .social-media li a img {
   margin-right: 1rem;
 }
+
 header nav .top-line .social-media li a {
   color: var(--color-blue);
 }
+
 header nav .header-inner {
   border-bottom: 1px solid var(--color-blue);
   height: 6rem;
 }
+
 header nav .header-inner .navbar-brand img {
   max-width: 11rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 header nav .header-inner nav .nav-menu li {
   margin-right: 2rem;
 }
+
 header nav .header-inner nav .nav-menu li:last-child {
   margin-right: 0;
 }
+
 header nav .header-inner nav .nav-menu li a {
   font-weight: 500;
   font-size: 1.3rem;
 }
+
 header nav .header-inner nav .nav-menu li a:hover {
   color: var(--color-blue);
 }
+
 header nav .header-inner nav .search-button {
   margin-left: 2rem;
 }
+
 header nav .header-inner nav .search-button a img {
   max-width: 1.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 header nav .header-inner .online-meeting-button a {
   font-weight: 600;
   font-size: 1.4rem;
   padding: 0.6rem 0.5rem;
-  background: rgb(47, 65, 144);
-  background: linear-gradient(90deg, rgb(47, 65, 144) 0%, rgb(88, 100, 155) 35%, rgb(120, 127, 163) 78%, rgb(165, 167, 174) 100%);
+  background: #2f4190;
+  background: -webkit-gradient(linear, left top, right top, from(#2f4190), color-stop(35%, #58649b), color-stop(78%, #787fa3), to(#a5a7ae));
+  background: linear-gradient(90deg, #2f4190 0%, #58649b 35%, #787fa3 78%, #a5a7ae 100%);
   background-size: 300%;
   color: var(--color-white);
   -webkit-animation-duration: 4s;
@@ -126,15 +157,19 @@ header nav .header-inner .online-meeting-button a {
   -webkit-animation-name: gradients;
           animation-name: gradients;
 }
+
 header nav .header-inner .language-area img {
   margin-right: 0.4rem;
 }
+
 header nav .header-inner .language-area li {
   margin-right: 0.5rem;
 }
+
 header nav .header-inner .language-area li:last-child {
   margin-right: 0;
 }
+
 header nav .header-inner .language-area li button {
   background-color: transparent;
   border: 0;
@@ -142,36 +177,109 @@ header nav .header-inner .language-area li button {
   font-size: 1rem;
   color: var(--color-dark-gray);
 }
+
 header nav .header-inner .language-area li button.active {
   text-decoration: underline;
 }
 
 .banner {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: white;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  /*     background: var(--color-white);
+    font-size: 14px;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    position: relative; */
   height: 100%;
-  width: 100%;
-  overflow: hidden;
+  /*     width: 100%;
+    overflow: hidden; */
+  height: calc(100% - 130px);
 }
+
 .banner .swiper-container {
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .banner .swiper-slide {
   text-align: center;
   font-size: 48px;
   font-weight: 500;
   /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+}
+
+.speed-appointment {
+  background-color: var(--color-gray-light);
+  height: 36vh;
+}
+
+.speed-appointment .text-area {
+  padding-right: 0;
+}
+
+.speed-appointment .text-area .content {
+  position: relative;
+  height: 35vh;
+  background-color: white;
+  background-color: var(--color-blue);
+  margin-top: -10rem;
+  z-index: 999;
+  padding-top: 2.5rem;
+}
+
+.speed-appointment .text-area .content h3 {
+  font-family: "Amalfi Coast";
+  color: var(--color-white);
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.speed-appointment .text-area .content .text {
+  max-width: 30rem;
+}
+
+.speed-appointment .text-area .content .text p {
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.speed-appointment .quick-appointment {
+  background-color: var(--color-white);
+  height: 50vh;
+  position: relative;
+  z-index: 999;
+  margin-top: -10rem;
+}
+
+.speed-appointment .quick-appointment .row {
+  padding: 2rem;
+}
+
+.speed-appointment .quick-appointment .row img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.speed-appointment .quick-appointment .button-area {
+  width: 100%;
+  padding: 0rem 1rem;
+}
+
+.speed-appointment .quick-appointment .button-area button {
+  width: 100%;
 }
 
 .our-services {
@@ -185,6 +293,7 @@ header nav .header-inner .language-area li button.active {
   padding-left: 2em;
   padding-right: 2em;
 }
+
 .our-services h2 {
   font-size: 2rem;
   font-weight: 600;
@@ -192,23 +301,33 @@ header nav .header-inner .language-area li button.active {
   letter-spacing: 0.2rem;
   margin-bottom: 2rem;
 }
+
 .our-services .swiper-button-next::after,
 .our-services .swiper-button-prev::after {
   content: "";
 }
+
 .our-services .swiper {
   width: 100%;
   height: 100%;
 }
+
 .our-services .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
+
 .our-services .swiper-slide img {
   display: block;
   width: 100%;
@@ -216,6 +335,7 @@ header nav .header-inner .language-area li button.active {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .our-services .swiper-slide .card .card-body {
   padding: 2rem;
   text-align: left;
@@ -223,6 +343,7 @@ header nav .header-inner .language-area li button.active {
   background-color: var(--color-blue);
   color: var(--color-white);
 }
+
 .our-services .swiper-slide .card .card-body .card-title {
   font-weight: 600;
 }
@@ -267,4 +388,5 @@ header nav .header-inner .language-area li button.active {
   100% {
     background-position: 0 0;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */

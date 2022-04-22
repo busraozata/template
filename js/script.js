@@ -1,6 +1,7 @@
 var swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     slidesPerView: 1,
+    effect: "fade",
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -10,6 +11,7 @@ var swiper = new Swiper('.swiper-container', {
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
+   
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
@@ -30,3 +32,6 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+
+
+$("#tel").mask("(999) 999-9999");
