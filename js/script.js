@@ -1,17 +1,18 @@
-var swiper = new Swiper('.swiper-container', {
-    direction: 'vertical',
+var swiper = new Swiper(".mySwiperBanner", {
     slidesPerView: 1,
+    spaceBetween: 30,
     effect: "fade",
+    loop: true,
     pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
-  });
 
+});
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
-   
+
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
