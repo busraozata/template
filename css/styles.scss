@@ -31,10 +31,17 @@
 }
 
 @font-face {
-    font-family: 'Monera Calm';
-    src: url('../fonts/MoneraCalm.woff2') format('woff2'),
-        url('../fonts/MoneraCalm.woff') format('woff');
+    font-family: "Monera Calm";
+    src: url("../fonts/MoneraCalm.woff2") format("woff2"), url("../fonts/MoneraCalm.woff") format("woff");
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Anybody";
+    src: url("../fonts/Anybody-ExtraLight.woff2") format("woff2"),
+        url("../fonts/Anybody-ExtraLight.woff") format("woff");
+    font-weight: 200;
     font-style: normal;
     font-display: swap;
 }
@@ -52,8 +59,6 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-
 }
 
 ul {
@@ -81,8 +86,16 @@ a {
     --color-dark-gray: #5e5e5e;
     --color-white: #fff;
     --color-gray-light: #f3f0f0;
+    --color-gray-2: #c3c4c5;
     --color-black: #000;
 }
+
+//responsive breakpoints
+$sm-breakpoint: 576px; //Small
+$md-breakpoint: 768px; //Medium
+$lg-breakpoint: 991px; //Large
+$xl-breakpoint: 1200px; //Extra large
+$xxl-breakpoint: 1400px; //Extra extra large
 
 @mixin title {
     font-size: 2rem;
@@ -90,6 +103,9 @@ a {
     color: var(--color-blue);
     letter-spacing: 0.2rem;
     margin-bottom: 2rem;
+    @media screen and(max-width:$lg-breakpoint) {
+        font-size: 1.5rem;
+    }
 }
 
 header {
@@ -175,11 +191,13 @@ header {
                     font-size: 1.4rem;
                     padding: 0.6rem 0.5rem;
                     background: rgb(47, 65, 144);
-                    background: linear-gradient(90deg,
-                            rgba(47, 65, 144, 1) 0%,
-                            rgba(88, 100, 155, 1) 35%,
-                            rgba(120, 127, 163, 1) 78%,
-                            rgba(165, 167, 174, 1) 100%);
+                    background: linear-gradient(
+                        90deg,
+                        rgba(47, 65, 144, 1) 0%,
+                        rgba(88, 100, 155, 1) 35%,
+                        rgba(120, 127, 163, 1) 78%,
+                        rgba(165, 167, 174, 1) 100%
+                    );
                     background-size: 300%;
                     color: var(--color-white);
                     animation-duration: 4s;
@@ -217,19 +235,12 @@ header {
     }
 }
 
-
-
-
-
 .banner {
-
     height: 100%;
     width: 100%;
     overflow: hidden;
     height: calc(100% - 130px);
     position: relative;
-
-
 
     .swiper {
         width: 100%;
@@ -266,9 +277,11 @@ header {
             display: block;
             z-index: 99;
             background: rgb(194, 202, 230);
-            background: linear-gradient(29deg, rgba(194, 202, 230, 0.4640449929971989) 70%, rgba(233, 237, 239, 0.43883490896358546) 88%);
-
-
+            background: linear-gradient(
+                29deg,
+                rgba(194, 202, 230, 0.4640449929971989) 70%,
+                rgba(233, 237, 239, 0.43883490896358546) 88%
+            );
         }
     }
 
@@ -284,8 +297,10 @@ header {
         margin-right: auto;
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
-            
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
         left: inherit !important;
         width: 0% !important;
         right: 0 !important;
@@ -293,8 +308,6 @@ header {
     .swiper-pagination {
         top: 0;
         padding-right: 2rem;
-
-     
 
         .swiper-pagination-bullet-active {
             background-color: var(--color-dark-gray) !important;
@@ -310,7 +323,6 @@ header {
             background-color: transparent;
 
             &::before {
-
                 height: 19px;
                 display: flex;
                 justify-content: center;
@@ -329,9 +341,21 @@ header {
 .speed-appointment {
     background-color: var(--color-gray-light);
     padding: 3.7rem 0rem;
+    @media screen and(max-width:$lg-breakpoint ) {
+        overflow: hidden;
+        padding: 1rem 0rem 1rem 0rem;
+    }
+
+    img {
+        max-width: 15rem;
+    }
 
     .text-area {
         padding-right: 0;
+        @media screen and(max-width:$lg-breakpoint ) {
+            padding-left: 0;
+            overflow: hidden;
+        }
 
         .content {
             position: relative;
@@ -339,13 +363,23 @@ header {
             background-color: var(--color-blue);
             margin-top: -10rem;
             z-index: 999;
-            padding: 3.5rem 0rem;
+            padding: 3.5rem 2rem;
+            @media screen and(max-width:$lg-breakpoint ) {
+                margin-top: 0;
+            }
 
             h3 {
                 font-family: "Amalfi Coast";
                 color: var(--color-white);
                 font-size: 4.5rem;
                 margin: 1rem 0rem 3rem 0rem;
+
+                @media screen and(max-width:1366px) {
+                    font-size: 3rem;
+                }
+                @media screen and(max-width:$sm-breakpoint) {
+                    font-size: 1.5rem;
+                }
             }
 
             .text {
@@ -356,6 +390,9 @@ header {
                     text-align: center;
                     font-weight: 500;
                     font-size: 1rem;
+                    @media screen and(max-width:$sm-breakpoint) {
+                        font-size: 0.8rem;
+                    }
                 }
             }
         }
@@ -367,7 +404,20 @@ header {
         position: relative;
         z-index: 999;
         margin-top: -10rem;
-
+        h3 {
+            color: var(--color-blue);
+            font-size: 2rem;
+            position: relative;
+            &::after {
+                content: "";
+                border-bottom: 3px solid var(--color-blue);
+                display: block;
+                bottom: 0;
+            }
+        }
+        @media screen and(max-width:$lg-breakpoint ) {
+            margin-top: 0;
+        }
         .row {
             padding: 2rem;
 
@@ -376,24 +426,52 @@ header {
             }
         }
 
+        form {
+            .form-group {
+                ::-webkit-input-placeholder {
+                    /* Edge */
+                   font-weight: 500;
+                }
+                .form-control {
+                    border: none;
+                    height: 3.5rem;
+                    -webkit-box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
+                    -moz-box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
+                    box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
+                }
+            }
+        }
         .button-area {
             width: 100%;
             padding: 0rem 1rem;
 
             button {
                 width: 100%;
+                background-color: var(--color-gray-2);
+                color: var(--color-white);
+                font-weight: 600;
+                letter-spacing: 0.2rem;
+                font-size: 1.2rem;
             }
         }
     }
 }
 
 .our-services {
-    padding: 3rem 0rem;
+    padding: 5rem 0rem;
     position: relative;
     background-color: var(--color-white);
     margin-left: auto;
     margin-right: auto;
-    width: 92%;
+    width: 80%;
+    overflow: hidden;
+    @media screen and(max-width:$lg-breakpoint) {
+        padding: 3rem 0rem;
+    }
+
+    @media screen and(max-width:1440px) {
+        width: 90%;
+    }
 
     /* make room for arrows */
     padding-left: 2em;
@@ -457,15 +535,18 @@ header {
 }
 
 .why-us {
-    padding: 3rem 0rem;
+    padding: 5rem 0rem;
     position: relative;
     background-color: var(--color-gray-light);
+    @media screen and(max-width:$lg-breakpoint) {
+        padding: 3rem 0rem;
+    }
 
     h2 {
         @include title;
 
         span {
-            font-family: 'Monera Calm';
+            font-family: "Monera Calm";
             font-size: 3rem;
             margin-left: -1rem;
         }
@@ -478,10 +559,20 @@ header {
         img {
             max-width: 10rem;
             object-fit: cover;
+            @media screen and(max-width:1440px) {
+                max-width: 8rem;
+            }
         }
 
         .card-body {
-            p {}
+            p {
+                font-weight: 500;
+                font-size: 1.1rem;
+                color: var(--color-black);
+                @media screen and(max-width:1440px) {
+                    font-size: 1rem;
+                }
+            }
         }
     }
 }
@@ -509,14 +600,12 @@ footer {
                 font-weight: 500;
 
                 i {
-
                     font-size: 1.3rem;
                 }
 
                 img {
                     margin-right: 1rem;
                     max-width: 1.3rem;
-
                 }
             }
         }
@@ -526,17 +615,132 @@ footer {
         padding: 2.5rem 0rem;
         border-bottom: 1px solid var(--color-white);
 
-
         h3 {
             font-family: "Amalfi Coast";
             color: var(--color-white);
             font-size: 1rem;
+
+            @media screen and(max-width:$xxl-breakpoint) {
+                line-height: 3rem;
+            }
         }
 
+        .social-media {
+            @media screen and(max-width:$lg-breakpoint) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        form {
+            .form-group {
+                flex-flow: wrap;
+                .form-control {
+                    border: 3px solid var(--color-blue) !important;
+                    background-color: transparent;
+                    border-radius: 2.25rem;
+                    color: var(--color-white);
+                    width: 70%;
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    @media screen and(max-width:$xxl-breakpoint) {
+                        width: 50%;
+                    }
+
+                    @media screen and(max-width:$lg-breakpoint) {
+                        width: 72%;
+                    }
+                }
+                .email-button {
+                    margin-left: 1rem;
+                    @media screen and(max-width:$sm-breakpoint) {
+                        margin: 1rem 0rem 1rem 0rem;
+                    }
+                    button {
+                        background-color: var(--color-blue);
+                        color: var(--color-white);
+                        border: none;
+                        border-radius: 2.25rem;
+                        padding: 0.8rem 3rem;
+                        font-weight: 500;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .form-check {
+                margin-left: 0.5rem;
+                .form-check-input {
+                    margin-top: 0;
+                    border: 3px solid var(--color-blue);
+                    background-color: transparent;
+                    margin-right: 0.5rem;
+
+                    &:checked[type="checkbox"] {
+                        background-color: var(--color-blue);
+                    }
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                label {
+                    margin-left: 0.2rem;
+                    color: #ececec;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    a {
+                        color: var(--color-white);
+                        text-decoration: underline;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
     }
 
     .footer-bottom {
-        padding: 3.5rem 0rem;
+        padding: 5rem 0rem;
+
+        .brand {
+            img {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .contact-us {
+            li {
+                margin-bottom: 0.5rem;
+
+                i {
+                    color: var(--color-blue);
+                    width: 2rem;
+                }
+            }
+        }
+
+        h5 {
+            color: var(--color-white);
+            letter-spacing: 0.1rem;
+        }
+        ul {
+            li {
+                a {
+                    color: var(--color-dark-gray);
+
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    transition: 0.2s;
+                    @media screen and(max-width:$xxl-breakpoint) {
+                        font-size: 1rem;
+                    }
+                    &:hover {
+                        color: var(--color-blue);
+                    }
+                }
+            }
+        }
     }
 }
 
