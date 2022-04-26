@@ -37,6 +37,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: "Anybody";
     src: url("../fonts/Anybody-ExtraLight.woff2") format("woff2"),
@@ -103,9 +104,11 @@ $xxl-breakpoint: 1400px; //Extra extra large
     color: var(--color-blue);
     letter-spacing: 0.2rem;
     margin-bottom: 2rem;
+
     @media screen and(max-width:$lg-breakpoint) {
         font-size: 1.5rem;
     }
+
     @media screen and(max-width:$sm-breakpoint) {
         font-size: 1.3rem;
     }
@@ -117,9 +120,10 @@ header {
             border-bottom: 1px solid var(--color-blue);
             padding: 1.5rem 0rem;
 
-            @media screen and(max-width:$xl-breakpoint ) {
+            @media screen and(max-width:$xl-breakpoint) {
                 display: none;
             }
+
             .contact-us,
             .social-media {
                 margin-bottom: 0;
@@ -151,11 +155,14 @@ header {
         .header-inner {
             border-bottom: 1px solid var(--color-blue);
             height: 6rem;
+
             .container {
                 position: relative;
+
                 @media screen and(min-width:$xl-breakpoint) {
                     height: 100%;
                 }
+
                 .row {
                     height: 100%;
                 }
@@ -180,12 +187,13 @@ header {
 
             nav {
                 height: 100%;
+
                 #toggle-btn {
                     display: none;
                     background-color: transparent;
                     border: none;
 
-                    @media screen and(max-width:$xl-breakpoint ) {
+                    @media screen and(max-width:$xl-breakpoint) {
                         display: block !important;
                     }
 
@@ -193,11 +201,13 @@ header {
                         font-size: 1.5rem;
                     }
                 }
+
                 .nav-menu {
                     @media screen and(min-width:$xl-breakpoint) {
                         height: 100%;
                     }
-                    @media screen and(max-width:$xl-breakpoint ) {
+
+                    @media screen and(max-width:$xl-breakpoint) {
                         right: -130px;
                         padding: 2rem;
                         transition: 0.3s all;
@@ -217,6 +227,7 @@ header {
                         right: 0;
                         width: 100%;
                     }
+
                     li {
                         @media screen and(min-width:$xl-breakpoint) {
                             height: 100%;
@@ -224,6 +235,7 @@ header {
                             justify-content: flex-start;
                             align-items: center;
                         }
+
                         a {
                             font-weight: 500;
                             font-size: 1.3rem;
@@ -231,8 +243,10 @@ header {
                             cursor: pointer;
                             display: inline-block;
                             position: relative;
+
                             &:hover {
                                 color: var(--color-blue);
+
                                 &::after {
                                     content: "";
                                     border-bottom: 2px solid var(--color-blue);
@@ -241,24 +255,34 @@ header {
                                 }
                             }
                         }
-
                         &.show,
                         &:hover {
+                            @media screen and(max-width:$xl-breakpoint) {
+                                width: 100%;
+                            }
+
                             .dropdown-menu {
                                 left: 0;
                                 padding: 0;
                                 display: block;
                                 top: 5.8rem;
 
+                                @media screen and(max-width:$xl-breakpoint) {
+                                    height: 100%;
+                                    top: 0;
+                                    width: 100%;
+                                    
+                                    position: relative;
+                                }
+
                                 .img-area {
                                     background: rgb(39, 57, 144);
-                                    background: linear-gradient(
-                                        150deg,
-                                        rgba(39, 57, 144, 1) 0%,
-                                        rgba(62, 76, 151, 1) 35%,
-                                        rgba(63, 77, 152, 1) 78%,
-                                        rgba(73, 87, 156, 1) 100%
-                                    );
+                                    background: linear-gradient(150deg,
+                                            rgba(39, 57, 144, 1) 0%,
+                                            rgba(62, 76, 151, 1) 35%,
+                                            rgba(63, 77, 152, 1) 78%,
+                                            rgba(73, 87, 156, 1) 100%);
+
                                     img {
                                         object-fit: cover;
                                     }
@@ -266,6 +290,11 @@ header {
 
                                 .submenu-area {
                                     padding: 2rem;
+                                    display: flex;
+                                    @media screen and(max-width:$xl-breakpoint) {
+                                        flex-direction: column;
+                                    }
+
                                     .sub-item {
                                         .sub-menu-title {
                                             color: var(--color-blue);
@@ -274,6 +303,7 @@ header {
                                             font-weight: 500;
                                             position: relative;
                                             padding-bottom: 0.8rem;
+
                                             &::after {
                                                 content: "";
                                                 border-bottom: 3px solid var(--color-blue);
@@ -281,23 +311,36 @@ header {
                                                 bottom: 0;
                                             }
                                         }
+
                                         .sub-menu {
+                                            @media screen and(max-width:$xl-breakpoint) {
+                                                display: none;
+                                            }
+
                                             li {
                                                 margin-bottom: 0.2rem;
+
                                                 a {
                                                     color: var(--color-blue);
-                                                    font-size: 1.1rem;
+                                                    font-size: 1.1rem !important;
                                                     font-weight: 400;
+
                                                     &::after {
                                                         display: none;
                                                     }
                                                 }
                                             }
                                         }
+
                                         &:first-child {
                                             margin-left: 0;
                                         }
+
                                         margin-left: 3rem;
+
+                                        @media screen and(max-width:$xl-breakpoint) {
+                                            margin-left: 0;
+                                        }
                                     }
                                 }
                             }
@@ -307,7 +350,8 @@ header {
 
                 .search-button {
                     margin-left: 2rem;
-                    @media screen and(max-width:$xl-breakpoint ) {
+
+                    @media screen and(max-width:$xl-breakpoint) {
                         display: none !important;
                     }
 
@@ -320,21 +364,20 @@ header {
             }
 
             .online-meeting-button {
-                @media screen and(max-width:$xl-breakpoint ) {
+                @media screen and(max-width:$xl-breakpoint) {
                     display: none !important;
                 }
+
                 a {
                     font-weight: 600;
                     font-size: 1.4rem;
                     padding: 0.6rem 0.5rem;
                     background: rgb(47, 65, 144);
-                    background: linear-gradient(
-                        90deg,
-                        rgba(47, 65, 144, 1) 0%,
-                        rgba(88, 100, 155, 1) 35%,
-                        rgba(120, 127, 163, 1) 78%,
-                        rgba(165, 167, 174, 1) 100%
-                    );
+                    background: linear-gradient(90deg,
+                            rgba(47, 65, 144, 1) 0%,
+                            rgba(88, 100, 155, 1) 35%,
+                            rgba(120, 127, 163, 1) 78%,
+                            rgba(165, 167, 174, 1) 100%);
                     background-size: 300%;
                     color: var(--color-white);
                     animation-duration: 4s;
@@ -344,9 +387,10 @@ header {
             }
 
             .language-area {
-                @media screen and(max-width:$xl-breakpoint ) {
+                @media screen and(max-width:$xl-breakpoint) {
                     display: none !important;
                 }
+
                 img {
                     margin-right: 0.4rem;
                 }
@@ -406,6 +450,7 @@ header {
         -webkit-align-items: center;
         align-items: center;
         padding-left: 4.5rem;
+
         @media screen and(max-width:$sm-breakpoint) {
             padding-left: 2.4rem;
         }
@@ -419,15 +464,14 @@ header {
             display: block;
             z-index: 99;
             background: rgb(194, 202, 230);
-            background: linear-gradient(
-                29deg,
-                rgba(194, 202, 230, 0.651) 70%,
-                rgba(233, 237, 239, 0.43883490896358546) 88%
-            );
+            background: linear-gradient(29deg,
+                    rgba(194, 202, 230, 0.651) 70%,
+                    rgba(233, 237, 239, 0.43883490896358546) 88%);
 
             @media screen and(max-width:$xl-breakpoint) {
                 width: 90%;
             }
+
             @media screen and(max-width:$sm-breakpoint) {
                 left: 1rem;
                 width: 92%;
@@ -442,72 +486,93 @@ header {
             @media screen and(max-width:2000px) {
                 margin-left: 15rem;
             }
+
             @media screen and(max-width:1600px) {
                 margin-left: 1rem;
             }
+
             @media screen and(max-width:1366px) {
                 margin-left: 3rem;
             }
+
             @media screen and(max-width:$xl-breakpoint) {
                 margin-left: 0;
             }
+
             max-width: 39rem;
             text-align: left;
+
             @media screen and(max-width:$xl-breakpoint) {
                 max-width: 30rem;
             }
+
             h5 {
                 color: white;
                 font-size: 2.5rem;
                 font-weight: 500;
+
                 @media screen and(max-width:$xl-breakpoint) {
                     font-size: 2rem;
                 }
+
                 @media screen and(max-width:$sm-breakpoint) {
                     font-size: 1.2rem;
                 }
             }
+
             h1 {
                 font-size: 4rem;
                 font-weight: 600;
                 color: var(--color-blue);
+
                 @media screen and(max-width:$xl-breakpoint) {
                     font-size: 2.5rem;
                 }
+
                 @media screen and(max-width:$sm-breakpoint) {
                     font-size: 2rem;
                 }
             }
+
             img {
                 max-width: 3rem;
+
                 @media screen and(max-width:$xl-breakpoint) {
                     max-width: 2rem;
                 }
             }
+
             .support-area {
                 margin-left: 1rem;
+
                 span {
                     font-size: 1.5rem;
                     font-weight: 400;
                     color: var(--color-blue);
+
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.4rem;
                     }
+
                     @media screen and(max-width:$sm-breakpoint) {
                         font-size: 1.2rem;
                     }
                 }
+
                 p {
                     color: var(--color-white);
                     font-size: 1.3rem;
                     font-weight: 400;
+
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.2rem;
                     }
+
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1rem;
                     }
                 }
+
                 a {
                     background-color: #656565;
                     color: var(--color-white);
@@ -515,12 +580,15 @@ header {
                     padding: 0.8rem 1.5rem;
                     font-weight: 500;
                     display: inline-block;
+
                     i {
                         margin-left: 0.5rem;
                     }
+
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.3rem;
                     }
+
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.1rem;
                         padding: 0.8rem 1rem;
@@ -542,7 +610,7 @@ header {
         margin-right: auto;
     }
 
-    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
@@ -550,6 +618,7 @@ header {
         width: 0% !important;
         right: 0 !important;
     }
+
     .swiper-pagination {
         top: 0;
         padding-right: 2rem;
@@ -586,7 +655,8 @@ header {
 .speed-appointment {
     background-color: var(--color-gray-light);
     padding: 3.7rem 0rem;
-    @media screen and(max-width:$lg-breakpoint ) {
+
+    @media screen and(max-width:$lg-breakpoint) {
         padding: 1rem 0rem 1rem 0rem;
     }
 
@@ -596,7 +666,8 @@ header {
 
     .text-area {
         padding-right: 0;
-        @media screen and(max-width:$lg-breakpoint ) {
+
+        @media screen and(max-width:$lg-breakpoint) {
             padding-left: 0;
             overflow: hidden;
         }
@@ -608,7 +679,8 @@ header {
             margin-top: -10rem;
             z-index: 999;
             padding: 3.5rem 2rem;
-            @media screen and(max-width:$lg-breakpoint ) {
+
+            @media screen and(max-width:$lg-breakpoint) {
                 margin-top: 0;
             }
 
@@ -621,6 +693,7 @@ header {
                 @media screen and(max-width:1366px) {
                     font-size: 3rem;
                 }
+
                 @media screen and(max-width:$sm-breakpoint) {
                     font-size: 1.5rem;
                 }
@@ -634,6 +707,7 @@ header {
                     text-align: center;
                     font-weight: 500;
                     font-size: 1rem;
+
                     @media screen and(max-width:$sm-breakpoint) {
                         font-size: 0.8rem;
                     }
@@ -648,19 +722,23 @@ header {
         position: relative;
         z-index: 999;
         margin-top: -10rem;
+
         .row {
             margin-left: 0;
             margin-right: 0;
         }
+
         h3 {
             color: var(--color-blue);
             font-size: 2.5rem;
             position: relative;
             display: inline-block;
-            @media screen and(max-width:$sm-breakpoint ) {
+
+            @media screen and(max-width:$sm-breakpoint) {
                 margin-top: 1.3rem;
                 font-size: 1.8rem;
             }
+
             &::after {
                 content: "";
                 border-bottom: 3px solid var(--color-blue);
@@ -668,9 +746,11 @@ header {
                 bottom: 0;
             }
         }
-        @media screen and(max-width:$lg-breakpoint ) {
+
+        @media screen and(max-width:$lg-breakpoint) {
             margin-top: 0;
         }
+
         .row {
             padding: 2rem;
 
@@ -685,6 +765,7 @@ header {
                     /* Edge */
                     font-weight: 500;
                 }
+
                 .form-control {
                     border: none;
                     height: 3.5rem;
@@ -695,6 +776,7 @@ header {
                 }
             }
         }
+
         .button-area {
             width: 100%;
             padding: 0rem 1rem;
@@ -719,6 +801,7 @@ header {
     margin-right: auto;
     width: 80%;
     overflow: hidden;
+
     @media screen and(max-width:$lg-breakpoint) {
         padding: 3rem 0rem;
     }
@@ -785,6 +868,7 @@ header {
                 .card-text {
                     font-weight: 400;
                     font-size: 1.1rem;
+
                     @media screen and(max-width:$sm-breakpoint) {
                         font-size: 1rem;
                     }
@@ -802,6 +886,7 @@ header {
     padding: 5rem 0rem;
     position: relative;
     background-color: var(--color-gray-light);
+
     @media screen and(max-width:$lg-breakpoint) {
         padding: 3rem 0rem;
     }
@@ -813,6 +898,7 @@ header {
             font-family: "Monera Calm";
             font-size: 3rem;
             margin-left: -1rem;
+
             @media screen and(max-width:$sm-breakpoint) {
                 font-size: 2rem;
                 margin-left: 0rem;
@@ -827,6 +913,7 @@ header {
         img {
             max-width: 10rem;
             object-fit: cover;
+
             @media screen and(max-width:1440px) {
                 max-width: 8rem;
             }
@@ -837,9 +924,11 @@ header {
                 font-weight: 500;
                 font-size: 1.1rem;
                 color: var(--color-black);
+
                 @media screen and(max-width:1440px) {
                     font-size: 1rem;
                 }
+
                 @media screen and(max-width:$sm-breakpoint) {
                     font-size: 0.9rem;
                 }
@@ -905,12 +994,14 @@ footer {
         form {
             .form-group {
                 flex-flow: wrap;
+
                 .form-control {
                     border: 3px solid var(--color-blue) !important;
                     background-color: transparent;
                     border-radius: 2.25rem;
                     color: var(--color-white);
                     width: 70%;
+
                     &:focus {
                         box-shadow: none;
                     }
@@ -923,11 +1014,14 @@ footer {
                         width: 72%;
                     }
                 }
+
                 .email-button {
                     margin-left: 1rem;
+
                     @media screen and(max-width:$sm-breakpoint) {
                         margin: 1rem 0rem 1rem 0rem;
                     }
+
                     button {
                         background-color: var(--color-blue);
                         color: var(--color-white);
@@ -942,6 +1036,7 @@ footer {
 
             .form-check {
                 margin-left: 0.5rem;
+
                 .form-check-input {
                     margin-top: 0;
                     border: 3px solid var(--color-blue);
@@ -951,6 +1046,7 @@ footer {
                     &:checked[type="checkbox"] {
                         background-color: var(--color-blue);
                     }
+
                     &:focus {
                         box-shadow: none;
                     }
@@ -961,6 +1057,7 @@ footer {
                     color: #ececec;
                     font-size: 1.1rem;
                     font-weight: 400;
+
                     a {
                         color: var(--color-white);
                         text-decoration: underline;
@@ -995,6 +1092,7 @@ footer {
             color: var(--color-white);
             letter-spacing: 0.1rem;
         }
+
         ul {
             li {
                 a {
@@ -1003,9 +1101,11 @@ footer {
                     font-size: 1.1rem;
                     font-weight: 500;
                     transition: 0.2s;
+
                     @media screen and(max-width:$xxl-breakpoint) {
                         font-size: 1rem;
                     }
+
                     &:hover {
                         color: var(--color-blue);
                     }

@@ -17,8 +17,6 @@ $('ul li').on('click', function () {
     $(this).siblings().removeClass('show');
 });
 
-
-
 var swiper = new Swiper(".mySwiperBanner", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -72,9 +70,9 @@ $(function () {
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
         $('.header-inner').addClass('sticky');
-       
+
     } else {
         $('.header-inner').removeClass('sticky');
-       
+
     }
 });
