@@ -1,3 +1,24 @@
+const menuToggle = document.querySelector('#toggle-btn');
+const navigation = document.querySelector('.nav-menu');
+const listItem = document.querySelectorAll('.list-item');
+menuToggle.onclick = function () {
+    menuToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+
+    if (menuToggle.innerHTML === `<i class="fa-solid fa-xmark"></i>`) {
+        menuToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+    } else {
+        menuToggle.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    }
+}
+
+$('ul li').on('click', function () {
+    $(this).toggleClass('show');
+    $(this).siblings().removeClass('show');
+});
+
+
+
 var swiper = new Swiper(".mySwiperBanner", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -39,4 +60,21 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
-$("#tel").mask("(999) 999-9999");
+$(function () {
+
+    $('#datetimepicker2').datetimepicker({
+        format: 'DD-MM-YYYY'
+    });
+
+});
+
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $('.header-inner').addClass('sticky');
+       
+    } else {
+        $('.header-inner').removeClass('sticky');
+       
+    }
+});

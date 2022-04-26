@@ -106,6 +106,9 @@ $xxl-breakpoint: 1400px; //Extra extra large
     @media screen and(max-width:$lg-breakpoint) {
         font-size: 1.5rem;
     }
+    @media screen and(max-width:$sm-breakpoint) {
+        font-size: 1.3rem;
+    }
 }
 
 header {
@@ -114,6 +117,9 @@ header {
             border-bottom: 1px solid var(--color-blue);
             padding: 1.5rem 0rem;
 
+            @media screen and(max-width:$xl-breakpoint ) {
+                display: none;
+            }
             .contact-us,
             .social-media {
                 margin-bottom: 0;
@@ -145,6 +151,25 @@ header {
         .header-inner {
             border-bottom: 1px solid var(--color-blue);
             height: 6rem;
+            .container {
+                position: relative;
+                @media screen and(min-width:$xl-breakpoint) {
+                    height: 100%;
+                }
+                .row {
+                    height: 100%;
+                }
+            }
+
+            &.sticky {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fffffffa;
+                z-index: 999999;
+                transition: 1s all;
+            }
 
             .navbar-brand {
                 img {
@@ -154,20 +179,127 @@ header {
             }
 
             nav {
+                height: 100%;
+                #toggle-btn {
+                    display: none;
+                    background-color: transparent;
+                    border: none;
+
+                    @media screen and(max-width:$xl-breakpoint ) {
+                        display: block !important;
+                    }
+
+                    i {
+                        font-size: 1.5rem;
+                    }
+                }
                 .nav-menu {
+                    @media screen and(min-width:$xl-breakpoint) {
+                        height: 100%;
+                    }
+                    @media screen and(max-width:$xl-breakpoint ) {
+                        right: -130px;
+                        padding: 2rem;
+                        transition: 0.3s all;
+                        width: 0%;
+                        top: 6rem;
+                        bottom: 0;
+                        background-color: var(--color-white);
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        align-items: flex-start !important;
+                        z-index: 9999;
+                        position: fixed;
+                    }
+
+                    &.active {
+                        right: 0;
+                        width: 100%;
+                    }
                     li {
-                        margin-right: 2rem;
-
-                        &:last-child {
-                            margin-right: 0;
+                        @media screen and(min-width:$xl-breakpoint) {
+                            height: 100%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
                         }
-
                         a {
                             font-weight: 500;
                             font-size: 1.3rem;
-
+                            color: var(--color-gray);
+                            cursor: pointer;
+                            display: inline-block;
+                            position: relative;
                             &:hover {
                                 color: var(--color-blue);
+                                &::after {
+                                    content: "";
+                                    border-bottom: 2px solid var(--color-blue);
+                                    display: block;
+                                    bottom: 0;
+                                }
+                            }
+                        }
+
+                        &.show,
+                        &:hover {
+                            .dropdown-menu {
+                                left: 0;
+                                padding: 0;
+                                display: block;
+                                top: 5.8rem;
+
+                                .img-area {
+                                    background: rgb(39, 57, 144);
+                                    background: linear-gradient(
+                                        150deg,
+                                        rgba(39, 57, 144, 1) 0%,
+                                        rgba(62, 76, 151, 1) 35%,
+                                        rgba(63, 77, 152, 1) 78%,
+                                        rgba(73, 87, 156, 1) 100%
+                                    );
+                                    img {
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                .submenu-area {
+                                    padding: 2rem;
+                                    .sub-item {
+                                        .sub-menu-title {
+                                            color: var(--color-blue);
+                                            display: inline-block;
+                                            font-size: 1.2rem;
+                                            font-weight: 500;
+                                            position: relative;
+                                            padding-bottom: 0.8rem;
+                                            &::after {
+                                                content: "";
+                                                border-bottom: 3px solid var(--color-blue);
+                                                display: block;
+                                                bottom: 0;
+                                            }
+                                        }
+                                        .sub-menu {
+                                            li {
+                                                margin-bottom: 0.2rem;
+                                                a {
+                                                    color: var(--color-blue);
+                                                    font-size: 1.1rem;
+                                                    font-weight: 400;
+                                                    &::after {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &:first-child {
+                                            margin-left: 0;
+                                        }
+                                        margin-left: 3rem;
+                                    }
+                                }
                             }
                         }
                     }
@@ -175,17 +307,22 @@ header {
 
                 .search-button {
                     margin-left: 2rem;
+                    @media screen and(max-width:$xl-breakpoint ) {
+                        display: none !important;
+                    }
 
                     a {
-                        img {
-                            max-width: 1.5rem;
-                            object-fit: cover;
+                        i {
+                            font-size: 1.3rem;
                         }
                     }
                 }
             }
 
             .online-meeting-button {
+                @media screen and(max-width:$xl-breakpoint ) {
+                    display: none !important;
+                }
                 a {
                     font-weight: 600;
                     font-size: 1.4rem;
@@ -207,6 +344,9 @@ header {
             }
 
             .language-area {
+                @media screen and(max-width:$xl-breakpoint ) {
+                    display: none !important;
+                }
                 img {
                     margin-right: 0.4rem;
                 }
@@ -266,10 +406,12 @@ header {
         -webkit-align-items: center;
         align-items: center;
         padding-left: 4.5rem;
+        @media screen and(max-width:$sm-breakpoint) {
+            padding-left: 2.4rem;
+        }
 
         &::before {
             content: "";
-
             position: absolute;
             width: 94%;
             height: 84%;
@@ -279,9 +421,112 @@ header {
             background: rgb(194, 202, 230);
             background: linear-gradient(
                 29deg,
-                rgba(194, 202, 230, 0.4640449929971989) 70%,
+                rgba(194, 202, 230, 0.651) 70%,
                 rgba(233, 237, 239, 0.43883490896358546) 88%
             );
+
+            @media screen and(max-width:$xl-breakpoint) {
+                width: 90%;
+            }
+            @media screen and(max-width:$sm-breakpoint) {
+                left: 1rem;
+                width: 92%;
+            }
+        }
+
+        .content {
+            @media screen and(max-width:2700px) {
+                margin-left: 34rem;
+            }
+
+            @media screen and(max-width:2000px) {
+                margin-left: 15rem;
+            }
+            @media screen and(max-width:1600px) {
+                margin-left: 1rem;
+            }
+            @media screen and(max-width:1366px) {
+                margin-left: 3rem;
+            }
+            @media screen and(max-width:$xl-breakpoint) {
+                margin-left: 0;
+            }
+            max-width: 39rem;
+            text-align: left;
+            @media screen and(max-width:$xl-breakpoint) {
+                max-width: 30rem;
+            }
+            h5 {
+                color: white;
+                font-size: 2.5rem;
+                font-weight: 500;
+                @media screen and(max-width:$xl-breakpoint) {
+                    font-size: 2rem;
+                }
+                @media screen and(max-width:$sm-breakpoint) {
+                    font-size: 1.2rem;
+                }
+            }
+            h1 {
+                font-size: 4rem;
+                font-weight: 600;
+                color: var(--color-blue);
+                @media screen and(max-width:$xl-breakpoint) {
+                    font-size: 2.5rem;
+                }
+                @media screen and(max-width:$sm-breakpoint) {
+                    font-size: 2rem;
+                }
+            }
+            img {
+                max-width: 3rem;
+                @media screen and(max-width:$xl-breakpoint) {
+                    max-width: 2rem;
+                }
+            }
+            .support-area {
+                margin-left: 1rem;
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: var(--color-blue);
+                    @media screen and(max-width:$xl-breakpoint) {
+                        font-size: 1.4rem;
+                    }
+                    @media screen and(max-width:$sm-breakpoint) {
+                        font-size: 1.2rem;
+                    }
+                }
+                p {
+                    color: var(--color-white);
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    @media screen and(max-width:$xl-breakpoint) {
+                        font-size: 1.2rem;
+                    }
+                    @media screen and(max-width:$xl-breakpoint) {
+                        font-size: 1rem;
+                    }
+                }
+                a {
+                    background-color: #656565;
+                    color: var(--color-white);
+                    font-size: 1.5rem;
+                    padding: 0.8rem 1.5rem;
+                    font-weight: 500;
+                    display: inline-block;
+                    i {
+                        margin-left: 0.5rem;
+                    }
+                    @media screen and(max-width:$xl-breakpoint) {
+                        font-size: 1.3rem;
+                    }
+                    @media screen and(max-width:$xl-breakpoint) {
+                        font-size: 1.1rem;
+                        padding: 0.8rem 1rem;
+                    }
+                }
+            }
         }
     }
 
@@ -342,7 +587,6 @@ header {
     background-color: var(--color-gray-light);
     padding: 3.7rem 0rem;
     @media screen and(max-width:$lg-breakpoint ) {
-        overflow: hidden;
         padding: 1rem 0rem 1rem 0rem;
     }
 
@@ -404,10 +648,19 @@ header {
         position: relative;
         z-index: 999;
         margin-top: -10rem;
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
         h3 {
             color: var(--color-blue);
-            font-size: 2rem;
+            font-size: 2.5rem;
             position: relative;
+            display: inline-block;
+            @media screen and(max-width:$sm-breakpoint ) {
+                margin-top: 1.3rem;
+                font-size: 1.8rem;
+            }
             &::after {
                 content: "";
                 border-bottom: 3px solid var(--color-blue);
@@ -430,11 +683,12 @@ header {
             .form-group {
                 ::-webkit-input-placeholder {
                     /* Edge */
-                   font-weight: 500;
+                    font-weight: 500;
                 }
                 .form-control {
                     border: none;
                     height: 3.5rem;
+                    padding-left: 1.5rem;
                     -webkit-box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
                     -moz-box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
                     box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
@@ -524,6 +778,16 @@ header {
 
                 .card-title {
                     font-weight: 600;
+                    letter-spacing: 0.2rem;
+                    font-size: 1.3rem;
+                }
+
+                .card-text {
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                    @media screen and(max-width:$sm-breakpoint) {
+                        font-size: 1rem;
+                    }
                 }
 
                 height: 15rem;
@@ -549,6 +813,10 @@ header {
             font-family: "Monera Calm";
             font-size: 3rem;
             margin-left: -1rem;
+            @media screen and(max-width:$sm-breakpoint) {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
         }
     }
 
@@ -571,6 +839,9 @@ header {
                 color: var(--color-black);
                 @media screen and(max-width:1440px) {
                     font-size: 1rem;
+                }
+                @media screen and(max-width:$sm-breakpoint) {
+                    font-size: 0.9rem;
                 }
             }
         }
