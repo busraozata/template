@@ -46,6 +46,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   position: relative;
@@ -118,10 +122,11 @@ header nav .top-line .social-media li a {
   font-weight: 500;
 }
 
-header nav .top-line .contact-us li a img,
-header nav .top-line .social-media li a img {
-  margin-right: 1rem;
-  max-width: 1.3rem;
+header nav .top-line .contact-us li a i,
+header nav .top-line .social-media li a i {
+  margin-right: 0.4rem;
+  color: var(--color-blue);
+  font-size: 1.2rem;
 }
 
 header nav .top-line .social-media li a {
@@ -414,7 +419,7 @@ header nav .header-inner .language-area li button.active {
   padding-left: 4.5rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .banner .swiper-slide {
     padding-left: 2.4rem;
   }
@@ -438,7 +443,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .banner .swiper-slide::before {
     left: 1rem;
     width: 92%;
@@ -498,7 +503,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .banner .swiper-slide .content h5 {
     font-size: 1.2rem;
   }
@@ -516,7 +521,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .banner .swiper-slide .content h1 {
     font-size: 2rem;
   }
@@ -548,7 +553,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .banner .swiper-slide .content .support-area span {
     font-size: 1.2rem;
   }
@@ -718,7 +723,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .speed-appointment .text-area .content h3 {
     font-size: 1.5rem;
   }
@@ -735,7 +740,7 @@ header nav .header-inner .language-area li button.active {
   font-size: 1rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .speed-appointment .text-area .content .text p {
     font-size: 0.8rem;
   }
@@ -761,7 +766,7 @@ header nav .header-inner .language-area li button.active {
   display: inline-block;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .speed-appointment .quick-appointment h3 {
     margin-top: 1.3rem;
     font-size: 1.8rem;
@@ -856,7 +861,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .our-services h2 {
     font-size: 1.3rem;
   }
@@ -915,7 +920,7 @@ header nav .header-inner .language-area li button.active {
   font-size: 1.1rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .our-services .swiper-slide .card .card-body .card-text {
     font-size: 1rem;
   }
@@ -947,7 +952,7 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .why-us h2 {
     font-size: 1.3rem;
   }
@@ -959,7 +964,7 @@ header nav .header-inner .language-area li button.active {
   margin-left: -1rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .why-us h2 span {
     font-size: 2rem;
     margin-left: 0rem;
@@ -995,10 +1000,643 @@ header nav .header-inner .language-area li button.active {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .why-us .card .card-body p {
     font-size: 0.9rem;
   }
+}
+
+.sub-banner {
+  min-height: 40vh;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+}
+
+@media screen and (max-width: 1200px) {
+  .sub-banner {
+    min-height: 30vh;
+  }
+}
+
+.sub-banner::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.856);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: -1;
+}
+
+.sub-banner .content {
+  z-index: 999;
+}
+
+.sub-banner .content h1 {
+  color: var(--color-blue);
+  font-weight: 500;
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .sub-banner .content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.sub-banner .content a {
+  color: var(--color-gray);
+  font-size: 1.3rem;
+  font-weight: 400;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.sub-banner .content a:hover {
+  color: var(--color-blue);
+  border-bottom: 1px solid var(--color-blue);
+}
+
+@media screen and (max-width: 1200px) {
+  .sub-banner .content a {
+    font-size: 1.1rem;
+  }
+}
+
+.sub-banner .content i {
+  margin: 0rem 0.5rem;
+  font-size: 1.3rem;
+  color: var(--color-blue);
+}
+
+.doctors {
+  position: relative;
+  padding: 4rem 0rem 2rem 0rem;
+}
+
+@media screen and (max-width: 600px) {
+  .doctors {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .doctors .top-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.doctors .top-area h3 {
+  color: var(--color-dark-gray);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.doctors .top-area form {
+  max-width: 16rem;
+  width: 100%;
+}
+
+.doctors .top-area form .input-group button {
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.doctors .top-area form .input-group button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.doctors .top-area form .input-group .form-control {
+  border: none;
+  padding: 0;
+  border-bottom: 3px solid var(--color-blue);
+  border-radius: 0;
+  color: var(--color-gray);
+}
+
+.doctors .top-area form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.doctors .card {
+  border: none;
+  -webkit-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.doctors .card:hover .card-body .btn {
+  color: var(--color-white);
+}
+
+.doctors .card:hover .card-body .btn::before {
+  width: 100%;
+}
+
+.doctors .card img {
+  height: 17rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.doctors .card .card-body {
+  height: 7rem;
+  background-color: var(--color-white);
+}
+
+.doctors .card .card-body h5 {
+  color: var(--color-gray);
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .doctors .card .card-body h5 {
+    font-size: 1rem;
+  }
+}
+
+.doctors .card .card-body p {
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .doctors .card .card-body p {
+    font-size: 0.9rem;
+  }
+}
+
+.doctors .card .card-body .btn {
+  padding: 0.7rem 2.5rem;
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  z-index: 9;
+}
+
+@media screen and (max-width: 1200px) {
+  .doctors .card .card-body .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.doctors .card .card-body .btn::before {
+  content: "";
+  background-color: var(--color-blue);
+  position: absolute;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 0%;
+}
+
+.our-treatments {
+  position: relative;
+  padding: 4rem 0rem 2rem 0rem;
+}
+
+@media screen and (max-width: 600px) {
+  .our-treatments {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .our-treatments .top-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.our-treatments .top-area h3 {
+  color: var(--color-dark-gray);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.our-treatments .top-area form {
+  max-width: 16rem;
+  width: 100%;
+}
+
+.our-treatments .top-area form .input-group button {
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.our-treatments .top-area form .input-group button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.our-treatments .top-area form .input-group .form-control {
+  border: none;
+  padding: 0;
+  border-bottom: 3px solid var(--color-blue);
+  border-radius: 0;
+  color: var(--color-gray);
+}
+
+.our-treatments .top-area form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.our-treatments .card {
+  border: none;
+  -webkit-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.our-treatments .card:hover .card-body .btn {
+  color: var(--color-white);
+}
+
+.our-treatments .card:hover .card-body .btn::before {
+  width: 100%;
+}
+
+.our-treatments .card .card-img-top {
+  height: 17rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.our-treatments .card .card-body {
+  height: 18rem;
+  background-color: var(--color-white);
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .our-treatments .card .card-body {
+    height: 17rem;
+  }
+}
+
+.our-treatments .card .card-body .icon-area {
+  background-color: var(--color-white);
+  height: 8rem;
+  width: 7rem;
+  z-index: 999;
+  margin-top: -6rem;
+  -webkit-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+  box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+}
+
+.our-treatments .card .card-body h5 {
+  color: var(--color-blue);
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments .card .card-body h5 {
+    font-size: 1rem;
+  }
+}
+
+.our-treatments .card .card-body p {
+  color: var(--color-gray);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments .card .card-body p {
+    font-size: 0.9rem;
+  }
+}
+
+.our-treatments-detail {
+  position: relative;
+  padding: 4rem 0rem 2rem 0rem;
+}
+
+@media screen and (max-width: 600px) {
+  .our-treatments-detail {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
+
+.our-treatments-detail .top-area {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .our-treatments-detail .top-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.our-treatments-detail .top-area h3 {
+  color: var(--color-dark-gray);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.our-treatments-detail .top-area form {
+  max-width: 16rem;
+  width: 100%;
+}
+
+.our-treatments-detail .top-area form .input-group button {
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.our-treatments-detail .top-area form .input-group button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.our-treatments-detail .top-area form .input-group .form-control {
+  border: none;
+  padding: 0;
+  border-bottom: 3px solid var(--color-blue);
+  border-radius: 0;
+  color: var(--color-gray);
+}
+
+.our-treatments-detail .top-area form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.our-treatments-detail .top-area h3 {
+  font-size: 2.5rem;
+}
+
+.our-treatments-detail .top-area h3 span {
+  color: var(--color-blue);
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .top-area h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.our-treatments-detail .sidebar {
+  -webkit-box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
+  box-shadow: 3px 7px 23px -8px rgba(0, 0, 0, 0.42);
+  height: 100%;
+  padding: 3rem 2rem;
+}
+
+.our-treatments-detail .sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.our-treatments-detail .sidebar ul li a {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--color-blue);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.our-treatments-detail .sidebar ul li a:hover {
+  color: var(--color-gray);
+}
+
+.our-treatments-detail .sidebar ul li a.active {
+  font-weight: 600;
+}
+
+.our-treatments-detail .sidebar ul li a.active i {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.our-treatments-detail .sidebar ul li a i {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .sidebar ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .detail-area {
+    margin-top: 2rem;
+  }
+}
+
+.our-treatments-detail .detail-area .text-area {
+  margin-top: 2rem;
+}
+
+.our-treatments-detail .detail-area .text-area p {
+  font-size: 1.1rem;
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .detail-area .text-area p {
+    font-size: 0.9rem;
+  }
+}
+
+.our-treatments-detail .last-blog-posts {
+  padding: 0rem 2rem;
+}
+
+.our-treatments-detail .last-blog-posts h4 {
+  font-size: 2rem;
+  color: var(--color-blue);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-left: -2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .last-blog-posts h4 {
+    font-size: 1.6rem;
+  }
+}
+
+.our-treatments-detail .last-blog-posts ul li {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.our-treatments-detail .last-blog-posts ul li:before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+  left: -1.7rem;
+  top: 0.2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .last-blog-posts ul li:before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+.our-treatments-detail .last-blog-posts ul li a {
+  font-size: 1.2rem;
+  font-weight: 400;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.our-treatments-detail .last-blog-posts ul li a:hover {
+  color: var(--color-blue);
+}
+
+@media screen and (max-width: 1200px) {
+  .our-treatments-detail .last-blog-posts ul li a {
+    font-size: 1rem;
+  }
+}
+
+.doctor-detail {
+  position: relative;
+  padding: 4rem 0rem 2rem 0rem;
+}
+
+@media screen and (max-width: 600px) {
+  .doctor-detail {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .doctor-detail .top-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.doctor-detail .top-area h3 {
+  color: var(--color-dark-gray);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.doctor-detail .top-area form {
+  max-width: 16rem;
+  width: 100%;
+}
+
+.doctor-detail .top-area form .input-group button {
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.doctor-detail .top-area form .input-group button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.doctor-detail .top-area form .input-group .form-control {
+  border: none;
+  padding: 0;
+  border-bottom: 3px solid var(--color-blue);
+  border-radius: 0;
+  color: var(--color-gray);
+}
+
+.doctor-detail .top-area form .input-group .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.doctor-detail .detail-area h5 {
+  margin-top: 1rem;
+  color: var(--color-gray);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.doctor-detail .detail-area p {
+  color: var(--color-blue);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .doctor-detail .detail-area .person-info {
+    margin-top: 1rem;
+  }
+}
+
+.doctor-detail .detail-area .person-info h4 {
+  color: var(--color-blue);
+  font-size: 1.4rem;
+}
+
+.doctor-detail .detail-area .person-info h4 span {
+  margin-left: 2rem;
+  font-weight: 500;
+  color: var(--color-gray);
+}
+
+.doctor-detail .detail-area .person-info p {
+  color: var(--color-gray);
+  font-size: 1rem;
+}
+
+.doctor-detail .working-hours {
+  background-color: var(--color-blue);
+  height: 26rem;
+  color: var(--color-white);
+  padding: 2rem;
+}
+
+.doctor-detail .working-hours h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.doctor-detail .working-hours .days .day-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-white);
+}
+
+.doctor-detail .working-hours .days .day-item span {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 footer {
@@ -1093,7 +1731,7 @@ footer .footer-top form .form-group .email-button {
   margin-left: 1rem;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   footer .footer-top form .form-group .email-button {
     margin: 1rem 0rem 1rem 0rem;
   }
