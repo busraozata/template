@@ -296,7 +296,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
 
 @mixin p {
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
     color: var(--color-white);
     @media screen and(max-width:$sm-breakpoint) {
@@ -1063,9 +1063,7 @@ header {
     }
 }
 
-.our-services-galery {
-    padding: 2rem 0rem;
-}
+
 
 .why-us {
     padding: 5rem 0rem;
