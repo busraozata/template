@@ -18,7 +18,7 @@
 <body>
     <header>
         <nav>
-            <div class="top-line">
+            <div class="top-line d-lg-flex d-none">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-6 col-md-6">
@@ -43,151 +43,166 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 d-flex align-items-center justify-content-between">
-                            <a class="navbar-brand" href="#"><img src="./img/logo.png" class="img-fluid" alt="logo"></a>
+                            <a class="navbar-brand" href="index.html"><img src="./img/logo.png" class="img-fluid" alt="logo"></a>
                             <nav class="d-flex align-items-center justify-content-center">
                                 <button id="toggle-btn"><i class="fa fa-bars"></i> </button>
-                                <ul class="nav-menu d-lg-flex align-items-center justify-content-center">
-                                    <li><a href="" class="nav-link">Ana Sayfa</a></li>
-                                    <li><a href="" class="nav-link">Kurumsal</a>
-                                        <div class="dropdown-menu megamenu">
-                                            <div class="d-flex align-items-start justify-content-start">
-                                                <div class="img-area">
-                                                    <img src="./img/design-4.png" class="img-fluid" alt="">
-                                                </div>
-                                                <div class="submenu-area d-flex">
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Kurumsal</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Hakkımızda</a></li>
-                                                            <li><a href="">Yönetim Kurulu Başkanı</a></li>
-                                                            <li><a href="">İnsan Kaynakları</a></li>
-                                                            <li><a href="">Sosyal Sorumluluk </a></li>
-                                                            <li><a href="">Anlaşmalı Kurumlar</a></li>
-                                                            <li><a href="">Sertifikalar</a></li>
-
-                                                        </ul>
+                                <div class="nav-menu d-flex align-items-center flex-column">
+                                    <ul class="navigation d-lg-flex align-items-center justify-content-center ">
+                                        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                                        <li><a class="nav-link">Kurumsal</a>
+                                            <div class="dropdown-menu megamenu">
+                                                <div class="d-flex align-items-start justify-content-start">
+                                                    <div class="img-area  d-lg-block d-none">
+                                                        <img src="./img/design-4.png" class="img-fluid" alt="">
+                                                    </div>
+                                                    <div class="submenu-area d-flex">
+                                                        <h4 class="exit-sub-menu d-lg-none d-lg-block"><i class="fa-solid fa-chevron-left"></i> Ana Menüye Dön</h4>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Kurumsal</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="about-us.html">Hakkımızda</a></li>
+                                                                <li><a href="">Yönetim Kurulu Başkanı</a></li>
+                                                                <li><a href="">İnsan Kaynakları</a></li>
+                                                                <li><a href="">Sosyal Sorumluluk </a></li>
+                                                                <li><a href="">Anlaşmalı Kurumlar</a></li>
+                                                                <li><a href="">Sertifikalar</a></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link">Tedavilerimiz</a>
-                                        <div class="dropdown-menu megamenu">
-                                            <div class="d-flex align-items-start justify-content-start">
-                                                <div class="img-area">
-                                                    <img src="./img/deesign.jpg" class="img-fluid" alt="">
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="our-treatments.html">Tedavilerimiz</a>
+                                            <div class="dropdown-menu megamenu">
+                                                <div class="d-flex align-items-start justify-content-start">
+                                                    <div class="img-area d-lg-block d-none">
+                                                        <img src="./img/deesign.jpg" class="img-fluid" alt="">
+                                                    </div>
+                                                    <div class="submenu-area d-flex">
+                                                        <h4 class="exit-sub-menu d-lg-none d-lg-block"><i class="fa-solid fa-chevron-left"></i> Ana Menüye Dön</h4>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Ortodonti</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="our-treatments-detail.html">Dijital Ortodonti</a></li>
+                                                                <li><a href="our-treatments-detail.html">Şeffaf Plaklar</a></li>
+                                                                <li><a href="our-treatments-detail.html">Metal Diş Teli</a></li>
+                                                                <li><a href="our-treatments-detail.html">Hızlandırılmış Ortodonti</a></li>
+                                                                <li><a href="our-treatments-detail.html">Poraelen Diş Teli</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Çocuk Diş Hekimliği</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="our-treatments-detail.html">Çocuklarda Genel Anestezi</a></li>
+                                                                <li><a href="our-treatments-detail.html">Yer Tutucular</a></li>
+                                                                <li><a href="our-treatments-detail.html">Diş Kazaları Tedavileri</a></li>
+                                                                <li><a href="our-treatments-detail.html">Çocuk Diş Temizliği</a></li>
+                                                                <li><a href="our-treatments-detail.html">Çocuklarda Zirkon Kaplama</a></li>
+                                                                <li><a href="our-treatments-detail.html">Fissür Örtücü</a></li>
+                                                                <li><a href="our-treatments-detail.html">Çocuk Diş Temizliği</a></li>
+                                                                <li><a href="our-treatments-detail.html">Flor</a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Estetik Diş Tedavisi</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="our-treatments-detail.html">Yaprak Diş</a></li>
+                                                                <li><a href="our-treatments-detail.html">Pembe Estetik</a></li>
+                                                                <li><a href="our-treatments-detail.html">İmplant</a></li>
+                                                                <li><a href="our-treatments-detail.html">Dijital Diş Hekimliği</a></li>
+                                                                <li><a href="our-treatments-detail.html">Diş Beyazlatma</a></li>
+                                                                <li><a href="our-treatments-detail.html">Zirkonyum Kaplama</a></li>
+                                                                <li><a href="our-treatments-detail.html">Protez Diş</a></li>
+                                                                <li><a href="our-treatments-detail.html">Kanal Tedavisi</a></li>
+                                                                <li><a href="our-treatments-detail.html">Diş Dolgusu</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="submenu-area d-flex">
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Ortodonti</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Dijital Ortodonti</a></li>
-                                                            <li><a href="">Şeffaf Plaklar</a></li>
-                                                            <li><a href="">Metal Diş Teli</a></li>
-                                                            <li><a href="">Hızlandırılmış Ortodonti</a></li>
-                                                            <li><a href="">Poraelen Diş Teli</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Çocuk Diş Hekimliği</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Çocuklarda Genel Anestezi</a></li>
-                                                            <li><a href="">Yer Tutucular</a></li>
-                                                            <li><a href="">Diş Kazaları Tedavileri</a></li>
-                                                            <li><a href="">Çocuk Diş Temizliği</a></li>
-                                                            <li><a href="">Çocuklarda Zirkon Kaplama</a></li>
-                                                            <li><a href="">Fissür Örtücü</a></li>
-                                                            <li><a href="">Çocuk Diş Temizliği</a></li>
-                                                            <li><a href="">Flor</a></li>
 
-                                                        </ul>
+                                            </div>
+                                        </li>
+                                        <li><a class="nav-link" href="doctors.html">Hekimler</a>
+                                            <div class="dropdown-menu megamenu">
+                                                <div class="d-flex align-items-start justify-content-start">
+                                                    <div class="img-area  d-lg-block d-none">
+                                                        <img src="./img/design-2.jpg" class="img-fluid" alt="">
                                                     </div>
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Estetik Diş Tedavisi</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Yaprak Diş</a></li>
-                                                            <li><a href="">Pembe Estetik</a></li>
-                                                            <li><a href="">İmplant</a></li>
-                                                            <li><a href="">Dijital Diş Hekimliği</a></li>
-                                                            <li><a href="">Diş Beyazlatma</a></li>
-                                                            <li><a href="">Zirkonyum Kaplama</a></li>
-                                                            <li><a href="">Protez Diş</a></li>
-                                                            <li><a href="">Kanal Tedavisi</a></li>
-                                                            <li><a href="">Diş Dolgusu</a></li>
-                                                        </ul>
+                                                    <div class="submenu-area d-flex">
+                                                        <h4 class="exit-sub-menu d-lg-none d-lg-block"><i class="fa-solid fa-chevron-left"></i> Ana Menüye Dön</h4>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Hekimlerimiz</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="doctor-detail.html">Dijital Ortodonti</a></li>
+                                                                <li><a href="doctor-detail.html">Şeffaf Plaklar</a></li>
+                                                                <li><a href="doctor-detail.html">Metal Diş Teli</a></li>
+                                                                <li><a href="doctor-detail.html">Hızlandırılmış Ortodonti</a></li>
+                                                                <li><a href="doctor-detail.html">Poraelen Diş Teli</a></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-
                                                 </div>
                                             </div>
-
-                                        </div>
-                                    </li>
-                                    <li><a class="nav-link">Hekimler</a>
-                                        <div class="dropdown-menu megamenu">
-                                            <div class="d-flex align-items-start justify-content-start">
-                                                <div class="img-area">
-                                                    <img src="./img/design-2.jpg" class="img-fluid" alt="">
-                                                </div>
-                                                <div class="submenu-area d-flex">
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Hekimlerimiz</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Dijital Ortodonti</a></li>
-                                                            <li><a href="">Şeffaf Plaklar</a></li>
-                                                            <li><a href="">Metal Diş Teli</a></li>
-                                                            <li><a href="">Hızlandırılmış Ortodonti</a></li>
-                                                            <li><a href="">Poraelen Diş Teli</a></li>
-                                                        </ul>
+                                        </li>
+                                        <li><a class="nav-link" href="blog.html">Blog</a>
+                                            <div class="dropdown-menu megamenu">
+                                                <div class="d-flex align-items-start justify-content-start">
+                                                    <div class="img-area  d-lg-block d-none">
+                                                        <img src="./img/design-3.png" class="img-fluid" alt="">
                                                     </div>
+                                                    <div class="submenu-area d-flex">
+                                                        <h4 class="exit-sub-menu d-lg-none d-lg-block"><i class="fa-solid fa-chevron-left"></i> Ana Menüye Dön</h4>
+                                                        <div class="sub-item">
+                                                            <h6 class="sub-menu-title">Blog</h6>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="blog-detail.html">Diş Çekiminden Sonra Dikkat Edilmesi Gereken Hususlar</a></li>
+                                                                <li><a href="blog-detail.html">İmplant Sonrası Dikkat Edilecek Hususlar</a></li>
+                                                                <li><a href="blog-detail.html">Çürük Diş Hakkında Bilinmesi Gerekenler</a></li>
+
+                                                            </ul>
+                                                        </div>
 
 
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </li>
-                                    <li><a class="nav-link">Blog</a>
-                                        <div class="dropdown-menu megamenu">
-                                            <div class="d-flex align-items-start justify-content-start">
-                                                <div class="img-area">
-                                                    <img src="./img/design-3.png" class="img-fluid" alt="">
-                                                </div>
-                                                <div class="submenu-area d-flex">
-                                                    <div class="sub-item">
-                                                        <h6 class="sub-menu-title">Blog</h6>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="">Diş Çekiminden Sonra Dikkat Edilmesi Gereken Hususlar</a></li>
-                                                            <li><a href="">İmplant Sonrası Dikkat Edilecek Hususlar</a></li>
-                                                            <li><a href="">Çürük Diş Hakkında Bilinmesi Gerekenler</a></li>
-
-                                                        </ul>
                                                     </div>
-
-
                                                 </div>
-                                            </div>
 
-                                        </div>
-                                    </li>
-                                    <li><a href="" class="nav-link">İletişim</a></li>
-                                </ul>
-                                <div class="search-button d-lg-block d-none">
-                                    <a href="#" class="search-toggle">
+                                            </div>
+                                        </li>
+                                        <li><a href="contact-us.html" class="nav-link">İletişim</a></li>
+                                    </ul>
+                                    <!-- Mobilde gözükecek alan -->
+                                    <ul class="language-area mobil d-lg-none d-flex align-items-start">
+                                        <img src="./img/world.png" class="img-fluid" alt="language">
+                                        <li><button class="active"> TR</button></li>
+                                        <li><button>EN</button></li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="search-button d-flex align-items-center">
+
+                                    <div class="ui-search-bar">
+                                        <input type="text" placeholder="Ne aramak istemiştiniz?" />
+                                    </div>
+                                    <button class="search-toggle">
                                         <i class="fa-solid fa-magnifying-glass"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </nav>
 
-                            <div class="online-meeting-button d-lg-block d-none">
-                                <a href="">ONLINE RANDEVU ALIN</a>
+                            <div class="online-meeting-button">
+                                <a href="contact-us.html">ONLINE RANDEVU ALIN</a>
                             </div>
-
+                            <!-- Masaüstünde gözükecek alan -->
                             <ul class="language-area d-lg-flex d-none align-items-center justify-content-center">
                                 <img src="./img/world.png" class="img-fluid" alt="language">
                                 <li><button class="active"> TR</button></li>
                                 <li><button>EN</button></li>
                             </ul>
+
+
                         </div>
                     </div>
                 </div>
@@ -201,7 +216,7 @@
                 <div class="content">
                     <h1>İletişim</h1>
                     <div class="d-flex align-items-center justify-content-start">
-                        <a href="">Ana Sayfa</a> <i class="fa-solid fa-chevron-right"></i> <a href="">İletişim</a>
+                        <a href="index.html">Ana Sayfa</a> <i class="fa-solid fa-chevron-right"></i> <a href="contact-us.html">İletişim</a>
                     </div>
                 </div>
             </div>
@@ -372,12 +387,12 @@
                         <div class="">
                             <h5 class="text-left">Kurumsal</h5>
                             <ul>
-                                <li><a href="">Lorem ipsum dolor</a></li>
-                                <li><a href="">Lorem ipsum dolor sit</a></li>
-                                <li><a href="">Lorem ipsum</a></li>
-                                <li><a href="">Lorem</a></li>
-                                <li><a href="">Lorem ipsum dolor</a></li>
-                                <li><a href="">Lorem ipsum</a></li>
+                                <li><a href="about-us.html">Hakkımızda</a></li>
+                                <li><a href="">Yönetim Kurulu Başkanı</a></li>
+                                <li><a href="">İnsan Kaynakları</a></li>
+                                <li><a href="">Sosyal Sorumluluk </a></li>
+                                <li><a href="">Anlaşmalı Kurumlar</a></li>
+                                <li><a href="">Sertifikalar</a></li>
                             </ul>
                         </div>
                     </div>
@@ -385,12 +400,14 @@
                         <div>
                             <h5>Tedavi Yöntemleri</h5>
                             <ul>
-                                <li><a href="">Lorem ipsum dolor</a></li>
-                                <li><a href="">Lorem ipsum dolor sit</a></li>
-                                <li><a href="">Lorem ipsum</a></li>
-                                <li><a href="">Lorem</a></li>
-                                <li><a href="">Lorem ipsum dolor</a></li>
-                                <li><a href="">Lorem ipsum</a></li>
+                                <li><a href="our-treatments-detail.html">Çocuklarda Genel Anestezi</a></li>
+                                <li><a href="our-treatments-detail.html">Yer Tutucular</a></li>
+                                <li><a href="our-treatments-detail.html">Diş Kazaları Tedavileri</a></li>
+                                <li><a href="our-treatments-detail.html">Çocuk Diş Temizliği</a></li>
+                                <li><a href="our-treatments-detail.html">Çocuklarda Zirkon Kaplama</a></li>
+                                <li><a href="our-treatments-detail.html">Fissür Örtücü</a></li>
+                                <li><a href="our-treatments-detail.html">Çocuk Diş Temizliği</a></li>
+                                <li><a href="our-treatments-detail.html">Flor</a></li>
                             </ul>
                         </div>
                     </div>

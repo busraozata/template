@@ -17,21 +17,31 @@ $('ul li').on('click', function () {
     $(this).siblings().removeClass('show');
 });
 
+$('.search-toggle').click(function () {
+
+    $('.ui-search-bar input').toggle(200);
+    $(".navigation").toggleClass("test");
+});
+
 var swiper = new Swiper(".mySwiperBanner", {
     slidesPerView: 1,
     spaceBetween: 30,
     effect: "fade",
+    autoplay: {
+        delay: 3000,
+    },
     loop: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
-
 });
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
-
+  /*   autoplay: {
+        delay: 3000,
+    }, */
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",

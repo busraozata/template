@@ -129,9 +129,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
             button {
                 padding: 0;
                 margin-right: 0.5rem;
-                &:focus {
-                    box-shadow: none;
-                }
+                @include focus;
             }
             .form-control {
                 border: none;
@@ -139,9 +137,7 @@ $xxl-breakpoint: 1400px; //Extra extra large
                 border-bottom: 3px solid var(--color-blue);
                 border-radius: 0;
                 color: var(--color-gray);
-                &:focus {
-                    box-shadow: none;
-                }
+                @include focus;
             }
         }
     }
@@ -193,15 +189,162 @@ $xxl-breakpoint: 1400px; //Extra extra large
     }
 }
 
+@mixin dropdown-menu {
+    .dropdown-menu {
+        left: 0;
+        padding: 0;
+        display: block;
+        top: 5.8rem;
+        &.exit-menu {
+            display: none !important;
+        }
+        @media screen and(max-width:$xl-breakpoint) {
+            top: 4.8rem;
+        }
+
+        @media screen and(max-width:$lg-breakpoint) {
+            left: 0;
+            height: 100%;
+            right: 0;
+            top: 0;
+            overflow: scroll;
+        }
+
+        .img-area {
+            background: rgb(39, 57, 144);
+            background: linear-gradient(
+                150deg,
+                rgba(39, 57, 144, 1) 0%,
+                rgba(62, 76, 151, 1) 35%,
+                rgba(63, 77, 152, 1) 78%,
+                rgba(73, 87, 156, 1) 100%
+            );
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .submenu-area {
+            padding: 2rem;
+            @media screen and(max-width:$lg-breakpoint) {
+                flex-direction: column;
+                width: 100%;
+                text-align: right;
+            }
+            .exit-sub-menu {
+                font-size: 1.2rem;
+                font-weight: 500;
+                i {
+                    font-size: 1rem;
+                }
+            }
+            .sub-item {
+                .sub-menu-title {
+                    color: var(--color-blue);
+                    display: inline-block;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    position: relative;
+                    padding-bottom: 0.8rem;
+                    &::after {
+                        content: "";
+                        border-bottom: 3px solid var(--color-blue);
+                        display: block;
+                        bottom: 0;
+                    }
+                }
+                .sub-menu {
+                    li {
+                        margin-bottom: 0.2rem;
+                        a {
+                            color: var(--color-blue);
+                            font-size: 1.1rem;
+                            font-weight: 400;
+                            transition: 0.3s all;
+                            &::after {
+                                display: none;
+                            }
+                            @media screen and(max-width:$lg-breakpoint) {
+                                color: var(--color-gray);
+                            }
+                            &:hover{
+                                color: var(--color-gray);
+                            }
+                        }
+                    }
+                }
+                &:first-child {
+                    margin-right: 0 !important;
+                }
+                margin-right: 3rem;
+                @media screen and(max-width:$xl-breakpoint) {
+                    margin-right: 1rem;
+                }
+                @media screen and(max-width:$lg-breakpoint) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@mixin focus {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+@mixin p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: left;
+    color: var(--color-white);
+    @media screen and(max-width:$sm-breakpoint) {
+        font-size: 0.9rem;
+    }
+}
+
+@mixin card-hover {
+    &:hover {
+        .detail-link {
+            visibility: visible;
+            opacity: 9;
+            right: 0;
+        }
+    }
+    .detail-link {
+        top: 0;
+        right: -1rem;
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        z-index: 99999;
+        background: var(--color-white);
+        transition: 0.3s all;
+        cursor: pointer;
+        visibility: hidden;
+        opacity: 0;
+        i {
+            font-size: 2rem;
+            color: var(--color-blue);
+        }
+        &:hover {
+            i {
+                color: var(--color-gray);
+            }
+        }
+    }
+}
+
 header {
     nav {
+        @media screen and(max-width:$lg-breakpoint ) {
+            flex-direction: row-reverse;
+        }
         .top-line {
             border-bottom: 1px solid var(--color-blue);
             padding: 1.5rem 0rem;
 
-            @media screen and(max-width:$xl-breakpoint ) {
-                display: none;
-            }
             .contact-us,
             .social-media {
                 margin-bottom: 0;
@@ -212,6 +355,9 @@ header {
                     a {
                         color: var(--color-gray);
                         font-weight: 500;
+                        &:hover{
+                            color: var(--color-blue);
+                        }
 
                         i {
                             margin-right: 0.4rem;
@@ -226,6 +372,9 @@ header {
                 li {
                     a {
                         color: var(--color-blue);
+                        &:hover{
+                            color: var(--color-gray);
+                        }
                     }
                 }
             }
@@ -258,6 +407,9 @@ header {
                 img {
                     max-width: 11rem;
                     object-fit: cover;
+                    @media screen and(max-width:$xl-breakpoint ) {
+                        max-width: 8rem;
+                    }
                 }
             }
 
@@ -268,7 +420,7 @@ header {
                     background-color: transparent;
                     border: none;
 
-                    @media screen and(max-width:$xl-breakpoint ) {
+                    @media screen and(max-width:$lg-breakpoint ) {
                         display: block !important;
                     }
 
@@ -280,7 +432,7 @@ header {
                     @media screen and(min-width:$xl-breakpoint) {
                         height: 100%;
                     }
-                    @media screen and(max-width:$xl-breakpoint ) {
+                    @media screen and(max-width:$lg-breakpoint ) {
                         right: -130px;
                         padding: 2rem;
                         transition: 0.3s all;
@@ -290,7 +442,7 @@ header {
                         background-color: var(--color-white);
                         display: flex;
                         justify-content: flex-start;
-                        flex-direction: column;
+                        flex-direction: column !important;
                         align-items: flex-start !important;
                         z-index: 9999;
                         position: fixed;
@@ -300,89 +452,46 @@ header {
                         right: 0;
                         width: 100%;
                     }
-                    li {
+                    .navigation {
                         @media screen and(min-width:$xl-breakpoint) {
                             height: 100%;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
                         }
-                        a {
-                            font-weight: 500;
-                            font-size: 1.3rem;
-                            color: var(--color-gray);
-                            cursor: pointer;
-                            display: inline-block;
-                            position: relative;
-                            &:hover {
-                                color: var(--color-blue);
-                                &::after {
-                                    content: "";
-                                    border-bottom: 2px solid var(--color-blue);
-                                    display: block;
-                                    bottom: 0;
+
+                        li {
+                            @media screen and(min-width:$xl-breakpoint) {
+                                height: 100%;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                            }
+                            a {
+                                font-weight: 500;
+                                font-size: 1.3rem;
+                                color: var(--color-gray);
+                                cursor: pointer;
+                                display: inline-block;
+                                position: relative;
+                                &:hover {
+                                    color: var(--color-blue);
+                                    &::after {
+                                        content: "";
+                                        border-bottom: 2px solid var(--color-blue);
+                                        display: block;
+                                        bottom: 0;
+                                    }
+                                }
+                                @media screen and(min-width:1366px) and (max-width: 1400px) {
+                                    font-size: 1.1rem;
                                 }
                             }
-                        }
 
-                        &.show,
-                        &:hover {
-                            .dropdown-menu {
-                                left: 0;
-                                padding: 0;
-                                display: block;
-                                top: 5.8rem;
-
-                                .img-area {
-                                    background: rgb(39, 57, 144);
-                                    background: linear-gradient(
-                                        150deg,
-                                        rgba(39, 57, 144, 1) 0%,
-                                        rgba(62, 76, 151, 1) 35%,
-                                        rgba(63, 77, 152, 1) 78%,
-                                        rgba(73, 87, 156, 1) 100%
-                                    );
-                                    img {
-                                        object-fit: cover;
-                                    }
+                            &:hover {
+                                @media screen and(min-width:$xl-breakpoint) {
+                                    @include dropdown-menu;
                                 }
-
-                                .submenu-area {
-                                    padding: 2rem;
-                                    .sub-item {
-                                        .sub-menu-title {
-                                            color: var(--color-blue);
-                                            display: inline-block;
-                                            font-size: 1.2rem;
-                                            font-weight: 500;
-                                            position: relative;
-                                            padding-bottom: 0.8rem;
-                                            &::after {
-                                                content: "";
-                                                border-bottom: 3px solid var(--color-blue);
-                                                display: block;
-                                                bottom: 0;
-                                            }
-                                        }
-                                        .sub-menu {
-                                            li {
-                                                margin-bottom: 0.2rem;
-                                                a {
-                                                    color: var(--color-blue);
-                                                    font-size: 1.1rem;
-                                                    font-weight: 400;
-                                                    &::after {
-                                                        display: none;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        &:first-child {
-                                            margin-left: 0;
-                                        }
-                                        margin-left: 3rem;
-                                    }
-                                }
+                            }
+                            &.show {
+                                @include dropdown-menu;
                             }
                         }
                     }
@@ -390,13 +499,39 @@ header {
 
                 .search-button {
                     margin-left: 2rem;
-                    @media screen and(max-width:$xl-breakpoint ) {
-                        display: none !important;
-                    }
 
-                    a {
+                    cursor: pointer;
+
+                    .search-toggle {
+                        background-color: transparent;
+                        border: none;
                         i {
                             font-size: 1.3rem;
+                            color: var(--color-gray);
+                        }
+                    }
+                    .ui-search-bar {
+                        input {
+                            display: none;
+                            position: absolute;
+                            bottom: -5rem;
+                            z-index: 99999;
+                            width: 100%;
+                            left: 0;
+                            height: 5rem;
+                            color: var(--color-gray);
+                            font-size: 1.2rem;
+                            padding-left: 1rem;
+                            &:focus {
+                                border: 1px solid var(--color-blue);
+                            }
+                            @media screen and(max-width:$xl-breakpoint ) {
+                                bottom: -6rem;
+                            }
+                            @media screen and(max-width:$lg-breakpoint ) {
+                                height: 3rem;
+                                bottom: -4rem;
+                            }
                         }
                     }
                 }
@@ -423,12 +558,22 @@ header {
                     animation-duration: 4s;
                     animation-iteration-count: infinite;
                     animation-name: gradients;
+                    @media screen and(min-width:1366px) and(max-width:1400px) {
+                        font-size: 1rem;
+                        padding: 0.4rem 0.3rem;
+                    }
                 }
             }
 
             .language-area {
-                @media screen and(max-width:$xl-breakpoint ) {
+                @media screen and(max-width:$lg-breakpoint ) {
                     display: none !important;
+                }
+                &.mobil {
+                    @media screen and(max-width:$lg-breakpoint ) {
+                        display: flex !important;
+                        padding-left: 1rem;
+                    }
                 }
                 img {
                     margin-right: 0.4rem;
@@ -598,8 +743,10 @@ header {
                     padding: 0.8rem 1.5rem;
                     font-weight: 500;
                     display: inline-block;
+                    transition: 0.3s all;
                     i {
                         margin-left: 0.5rem;
+                        transition: 0.3s all;
                     }
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.3rem;
@@ -607,6 +754,12 @@ header {
                     @media screen and(max-width:$xl-breakpoint) {
                         font-size: 1.1rem;
                         padding: 0.8rem 1rem;
+                    }
+                    &:hover {
+                        background-color: var(--color-blue);
+                        i {
+                            margin-left: 0.8rem;
+                        }
                     }
                 }
             }
@@ -636,22 +789,27 @@ header {
     .swiper-pagination {
         top: 0;
         padding-right: 2rem;
+        @media screen and(max-width:$lg-breakpoint) {
+            padding-right: 0.5rem;
+        }
 
         .swiper-pagination-bullet-active {
             background-color: var(--color-dark-gray) !important;
         }
 
         .swiper-pagination-bullet {
-            margin-bottom: 0.8rem;
+            margin-bottom: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
             border: none;
             opacity: 9;
+            width: 0.8rem;
+            height: 0.8rem;
             background-color: transparent;
 
             &::before {
-                height: 19px;
+                height: 39px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -660,7 +818,7 @@ header {
                 position: absolute;
                 z-index: -1;
                 background-color: var(--color-dark-gray);
-                width: 0.1rem;
+                width: 2px;
             }
         }
     }
@@ -763,6 +921,9 @@ header {
         }
 
         form {
+            .bootstrap-datetimepicker-widget table th {
+                height: 30px;
+            }
             .form-group {
                 ::-webkit-input-placeholder {
                     /* Edge */
@@ -789,6 +950,11 @@ header {
                 font-weight: 600;
                 letter-spacing: 0.2rem;
                 font-size: 1.2rem;
+                transition: 0.3s all;
+                @include focus;
+                &:hover {
+                    background-color: var(--color-blue);
+                }
             }
         }
     }
@@ -801,7 +967,10 @@ header {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    overflow: hidden;
+
+    @media screen and(min-width:2000px) {
+        width: 70%;
+    }
     @media screen and(max-width:$lg-breakpoint) {
         padding: 3rem 0rem;
     }
@@ -818,9 +987,25 @@ header {
         @include title;
     }
 
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        content: "";
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: 0;
+        @media screen and(min-width:2000px) {
+            right: 10px !important;
+        }
+        @media screen and(max-width:$sm-breakpoint) {
+            right: -1rem;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 0;
+        @media screen and(min-width:2000px) {
+            left: 10px !important;
+        }
+        @media screen and(max-width:$sm-breakpoint) {
+            left: -1rem;
+        }
     }
 
     .swiper {
@@ -855,27 +1040,28 @@ header {
         }
 
         .card {
+            @include card-hover;
             .card-body {
                 padding: 2rem;
                 text-align: left;
-
+                height: 15rem;
+                background-color: var(--color-blue);
+                color: var(--color-white);
+                @media screen and(max-width:$sm-breakpoint) {
+                    height: auto;
+                }
                 .card-title {
                     font-weight: 600;
                     letter-spacing: 0.2rem;
                     font-size: 1.3rem;
-                }
-
-                .card-text {
-                    font-weight: 400;
-                    font-size: 1.1rem;
                     @media screen and(max-width:$sm-breakpoint) {
-                        font-size: 1rem;
+                        font-size: 1.1rem;
                     }
                 }
 
-                height: 15rem;
-                background-color: var(--color-blue);
-                color: var(--color-white);
+                .card-text {
+                    @include p;
+                }
             }
         }
     }
@@ -921,14 +1107,10 @@ header {
 
         .card-body {
             p {
-                font-weight: 500;
-                font-size: 1.1rem;
-                color: var(--color-black);
+                @include p;
+                color: var(--color-black) !important;
                 @media screen and(max-width:1440px) {
                     font-size: 1rem;
-                }
-                @media screen and(max-width:$sm-breakpoint) {
-                    font-size: 0.9rem;
                 }
             }
         }
@@ -1004,6 +1186,7 @@ header {
         -moz-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
         box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
         transition: 0.3s all;
+        @include card-hover;
         &:hover {
             .card-body {
                 .btn {
@@ -1031,12 +1214,9 @@ header {
                 }
             }
             p {
-                color: var(--color-blue);
-                font-weight: 600;
-                font-size: 1.1rem;
-                @media screen and(max-width:$xl-breakpoint) {
-                    font-size: 0.9rem;
-                }
+                color: var(--color-blue) !important;
+                font-weight: 600 !important;
+                @include p;
             }
 
             .btn {
@@ -1089,7 +1269,7 @@ header {
         }
         p {
             color: var(--color-blue);
-            font-weight: 500;
+            font-weight: 600 !important;
             font-size: 1rem;
         }
         .person-info {
@@ -1108,6 +1288,7 @@ header {
             p {
                 color: var(--color-gray);
                 font-size: 1rem;
+                font-weight: 400 !important;
             }
         }
     }
@@ -1152,6 +1333,7 @@ header {
         -moz-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
         box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
         transition: 0.3s all;
+        @include card-hover;
         &:hover {
             .card-body {
                 .btn {
@@ -1172,23 +1354,35 @@ header {
             background-color: var(--color-white);
             padding: 2rem 1rem 2rem 1rem;
             @media screen and(max-width:$sm-breakpoint) {
-                height: 17rem;
+                height: 16rem;
             }
             .icon-area {
                 background-color: var(--color-white);
-                height: 8rem;
+                height: 7rem;
                 width: 7rem;
                 z-index: 999;
                 margin-top: -6rem;
                 -webkit-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
                 -moz-box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
                 box-shadow: 0px 2px 27px -10px rgba(0, 0, 0, 0.55);
+                img {
+                    max-width: 4rem;
+                }
+                @media screen and(max-width:$xl-breakpoint) {
+                    height: 6rem !important;
+                    width: 6rem !important;
+                    margin-top: -5rem !important;
+                    img {
+                        max-width: 3rem !important;
+                    }
+                }
             }
             h5 {
                 color: var(--color-blue);
                 font-size: 1.4rem;
+                font-weight: 500;
                 @media screen and(max-width:$xl-breakpoint) {
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                 }
             }
             p {
@@ -1279,6 +1473,30 @@ header {
     }
 }
 
+.about{
+    position: relative;
+    padding: 4rem 0rem 2rem 0rem;
+    @media screen and(max-width:$sm-breakpoint) {
+        padding: 2rem 0rem 2rem 0rem;
+    }
+    h4 {
+        color: var(--color-blue);
+        font-weight: 500;
+        font-size: 2rem;
+        @media screen and(max-width:$xl-breakpoint) {
+            font-size: 1.3rem;
+        }
+        @media screen and(max-width:$lg-breakpoint) {
+            margin-top: 1rem;
+        }
+    }
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-gray);
+    }
+}
+
 .blog {
     position: relative;
     padding: 4rem 0rem 2rem 0rem;
@@ -1312,9 +1530,7 @@ header {
             font-size: 1.4rem;
             font-weight: 500;
 
-            &:focus {
-                box-shadow: none;
-            }
+            @include focus;
 
             &:hover {
                 i {
@@ -1479,9 +1695,7 @@ header {
                     input,
                     textarea {
                         border-radius: 0;
-                        &:focus {
-                            box-shadow: none;
-                        }
+                        @include focus;
                     }
                     textarea {
                         resize: none;
@@ -1496,9 +1710,7 @@ header {
                         font-weight: 400;
                         position: relative;
 
-                        &:focus {
-                            box-shadow: none;
-                        }
+                        @include focus;
 
                         &::before {
                             content: "";
@@ -1584,9 +1796,7 @@ footer {
                     border-radius: 2.25rem;
                     color: var(--color-white);
                     width: 70%;
-                    &:focus {
-                        box-shadow: none;
-                    }
+                    @include focus;
 
                     @media screen and(max-width:$xxl-breakpoint) {
                         width: 50%;
@@ -1624,9 +1834,7 @@ footer {
                     &:checked[type="checkbox"] {
                         background-color: var(--color-blue);
                     }
-                    &:focus {
-                        box-shadow: none;
-                    }
+                    @include focus;
                 }
 
                 label {
@@ -1696,12 +1904,11 @@ footer {
     width: 150px;
     height: 200px;
     @media screen and(max-width:$sm-breakpoint) {
-       
         right: 1rem;
         width: 100px;
         height: 50px;
     }
-    img{
+    img {
         max-width: 5rem;
         @media screen and(max-width:$sm-breakpoint) {
             max-width: 3rem;
@@ -1713,7 +1920,7 @@ footer {
             transition: 0.3s all;
             opacity: 9 !important;
             visibility: visible !important;
-            &:hover{
+            &:hover {
                 background-color: var(--color-gray);
             }
 
@@ -1752,7 +1959,7 @@ footer {
             border-radius: 50%;
             position: absolute;
             z-index: -1;
-            transition: 0.3s all; 
+            transition: 0.3s all;
             opacity: 0;
             visibility: hidden;
             @media screen and(max-width:$sm-breakpoint) {
@@ -1781,7 +1988,7 @@ footer {
                     font-size: 1.4rem;
                     color: var(--color-white);
                     @media screen and(max-width:$sm-breakpoint) {
-                       font-size: 0.8rem;
+                        font-size: 0.8rem;
                     }
                 }
             }
