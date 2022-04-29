@@ -319,20 +319,16 @@ $xxl-breakpoint: 1400px; //Extra extra large
         width: 4rem;
         position: absolute;
         z-index: 99999;
-        background: var(--color-white);
+        background: var(--color-blue);
         transition: 0.3s all;
         cursor: pointer;
         visibility: hidden;
         opacity: 0;
         i {
             font-size: 2rem;
-            color: var(--color-blue);
+            color: var(--color-white);
         }
-        &:hover {
-            i {
-                color: var(--color-gray);
-            }
-        }
+        
     }
 }
 
@@ -1819,6 +1815,10 @@ footer {
                         padding: 0.8rem 3rem;
                         font-weight: 500;
                         font-size: 1.2rem;
+                        transition: 0.3s all;
+                        &:hover{
+                            background-color: var(--color-gray);
+                        }
                     }
                 }
             }

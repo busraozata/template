@@ -1248,7 +1248,7 @@ header nav .header-inner .language-area li button.active {
   width: 4rem;
   position: absolute;
   z-index: 99999;
-  background: var(--color-white);
+  background: var(--color-blue);
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
@@ -1258,11 +1258,7 @@ header nav .header-inner .language-area li button.active {
 
 .our-services .swiper-slide .card .detail-link i {
   font-size: 2rem;
-  color: var(--color-blue);
-}
-
-.our-services .swiper-slide .card .detail-link:hover i {
-  color: var(--color-gray);
+  color: var(--color-white);
 }
 
 .our-services .swiper-slide .card .card-body {
@@ -1537,7 +1533,7 @@ header nav .header-inner .language-area li button.active {
   width: 4rem;
   position: absolute;
   z-index: 99999;
-  background: var(--color-white);
+  background: var(--color-blue);
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
@@ -1547,11 +1543,7 @@ header nav .header-inner .language-area li button.active {
 
 .doctors .card .detail-link i {
   font-size: 2rem;
-  color: var(--color-blue);
-}
-
-.doctors .card .detail-link:hover i {
-  color: var(--color-gray);
+  color: var(--color-white);
 }
 
 .doctors .card:hover .card-body .btn {
@@ -1823,7 +1815,7 @@ header nav .header-inner .language-area li button.active {
   width: 4rem;
   position: absolute;
   z-index: 99999;
-  background: var(--color-white);
+  background: var(--color-blue);
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
@@ -1833,11 +1825,7 @@ header nav .header-inner .language-area li button.active {
 
 .our-treatments .card .detail-link i {
   font-size: 2rem;
-  color: var(--color-blue);
-}
-
-.our-treatments .card .detail-link:hover i {
-  color: var(--color-gray);
+  color: var(--color-white);
 }
 
 .our-treatments .card:hover .card-body .btn {
@@ -2677,6 +2665,12 @@ footer .footer-top form .form-group .email-button button {
   padding: 0.8rem 3rem;
   font-weight: 500;
   font-size: 1.2rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+footer .footer-top form .form-group .email-button button:hover {
+  background-color: var(--color-gray);
 }
 
 footer .footer-top form .form-check {
